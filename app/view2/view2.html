@@ -1,0 +1,15 @@
+<div ng-controller="View2Ctrl as ctl">
+  <form novalidate class="simple-form">
+    Address: <input type="text" ng-model="property.address" /><br />
+    URL: <input type="text" ng-model="property.url" /><br />
+    Type:
+    <select ng-model="property.type">
+      <option ng-repeat="propertyType in ctl.propertyTypes" value="{{propertyType}}">{{propertyType}}</option>
+    </select><br />
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(property)" value="Save" />
+  </form>
+
+  {{property | json}}
+  {{ctl.master | json}}
+</div>
